@@ -1,4 +1,4 @@
-package com.example.gpts
+package com.discordtime.gpts
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GPTS.iml" filepath="$PROJECT_DIR$/GPTS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gpts.iml" filepath="$PROJECT_DIR$/.idea/gpts.iml" />
     </modules>
   </component>
 </project>

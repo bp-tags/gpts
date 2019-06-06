@@ -1,42 +1,38 @@
-package com.example.gpts.listplaces.view
+package com.discordtime.gpts.listplaces.view
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gpts.R
-import com.example.gpts.listplaces.viewmodel.PlaceVM
+import com.discordtime.gpts.R
+import com.discordtime.gpts.listplaces.model.Place
 import kotlinx.android.synthetic.main.item_list_places.view.*
 
-class ListPlacesAdapter(val context:Context, val places:List<PlaceVM>)  :
+class ListPlacesAdapter(private val context:Context)  :
     RecyclerView.Adapter<ListPlacesAdapter.ViewHolder>(){
 
+    var listPlaces: List<Place> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
-
         return  ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list_places,parent,false))
-
     }
 
-    override fun getItemCount(): Int {
-
-        return  places.size
+    override fun getItemCount() : Int {
+        return listPlaces.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(places[position])
+        holder.bindView(listPlaces[position])
     }
-
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val tvPlaceName = itemView.tv_placename
+        private val tvPlaceName: TextView = itemView.tv_placename
 
-        fun bindView(placeVM: PlaceVM){
-            tvPlaceName.text = placeVM.name
+        fun bindView(place: Place){
+            tvPlaceName.text = place.name
         }
-
     }
 }
