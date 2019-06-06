@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.gpts"
+        applicationId "com.discordtime.gpts"
         minSdkVersion 28
         targetSdkVersion 28
         versionCode 1
@@ -32,6 +32,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
 
