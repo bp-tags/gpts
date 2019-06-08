@@ -1,5 +1,3 @@
 package com.discordtime.gpts.listplaces.model
 
-class Place (val name:String,location:String){
-
-}
+data class Place (val name: String, val location: String)
