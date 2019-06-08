@@ -6,6 +6,7 @@ import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.discordtime.gpts.R
 import com.discordtime.gpts.listplaces.model.Place
 import com.discordtime.gpts.listplaces.viewmodel.ListPlacesViewModel
