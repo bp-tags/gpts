@@ -11,8 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".lobby.LobbyActivity"
-                android:label="@string/title_activity_lobby">
+                android:name=".lobby.LobbyActivity">
+                <!--android:label="@string/title_activity_lobby">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

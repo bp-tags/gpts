@@ -5,32 +5,40 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
+import androidx.fragment.app.Fragment
 import com.discordtime.gpts.R
+import com.discordtime.gpts.profile.ProfileFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener
 
 class LobbyActivity : AppCompatActivity() {
 
-    lateinit var toolbar: ActionBar
+    private lateinit var toolbar: ActionBar
 
-    private lateinit var textMessage: TextView
-    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val onNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_map -> {
                 toolbar.title = "Map"
-                textMessage.setText("Fragment 1")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_list_places -> {
                 toolbar.title = "List Places"
-                textMessage.setText("Fragment 2")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
                 toolbar.title = "Profile"
-                textMessage.setText("Fragment 3")
+                var profileFragment = ProfileFragment.newInstance()
+                openFragment(profileFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.screen, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +49,6 @@ class LobbyActivity : AppCompatActivity() {
         toolbar = supportActionBar!!
         toolbar.title = "Map"
 
-        textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }
