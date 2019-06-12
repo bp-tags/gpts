@@ -37,11 +37,11 @@ class LobbyActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        fm.beginTransaction().add(R.id.container,
-            fragmentListPlaces, TAG_LIST_PLACE_FRAGMENT)
+        fm.beginTransaction().add(
+            R.id.container, fragmentListPlaces, TAG_LIST_PLACE_FRAGMENT)
             .hide(fragmentListPlaces).commit()
 
-        fm.beginTransaction().add(R.id.container,profileFragment,TAG_PROFILE_FRAGMENT)
+        fm.beginTransaction().add(R.id.container, profileFragment, TAG_PROFILE_FRAGMENT)
             .hide(profileFragment).commit()
     }
 
@@ -66,5 +66,4 @@ class LobbyActivity : AppCompatActivity() {
         }
         false
     }
-
 }
